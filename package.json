@@ -1,0 +1,23 @@
+{
+  "name": "url-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "Roman Hiebert",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "install": "^0.8.1",
+    "npm": "^3.10.5",
+    "request": "^2.74.0"
+  }
+}
