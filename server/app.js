@@ -1,11 +1,13 @@
 var request = require("request");
 var cheerio = require("cheerio");
 
+const URL = "http://ru.wikipedia.org/"
+
 var urlStorage = [];
 var index = 1;
 
 request({
-  uri: "http://ru.wikipedia.org/",
+  uri: URL,
 }, function(error, response, body) {
   var $ = cheerio.load(body);
 
@@ -30,8 +32,8 @@ request({
 
       }
       else if (href.search(/^\/wiki/g) != -1 ) {
-        console.log(index + ": " + text + " -> " + "https://ru.wikipedia.org" + href);
-        urlStorage.push("https://ru.wikipedia.org" + href);
+        console.log(index + ": " + text + " -> " + URL + href);
+        urlStorage.push(URL + href);
         index++;
       }
 
@@ -67,7 +69,7 @@ function searchMoreLinks(url){
 
         }
         else if (href.search(/^\/wiki/g) != -1 ) {
-          console.log(index + ": " + text + " -> " + "https://ru.wikipedia.org" + href);
+          console.log(index + ": " + text + " -> " + URL + href);
           //urlStorage.push("https://ru.wikipedia.org" + href);
           index++;
         }
